@@ -21,3 +21,15 @@ Namun jika terdapat URL Pattern yang lebih panjang URL tersebut yang akan di pri
 # Request
 Request adalah struct yang merepresesntasikan HTTP Request yang dikirim oleh web browser <br>
 Semua informasi request yang dikirim bisa kita dapatkan di Request, seperti URL, HTTP Method, HTTP Header, HTTP Body, dan lain-lain
+
+# HTTP Test
+HTTP Test adalah package khusus untuk membuat unit test terhadap fitur web yang kita buat <br>
+Package ini berada di `net/http/httptest`<br>
+Dengan package ini kita bisa menjalankan testing handler web tanpa harus menjalankan aplikasi webnya<br>
+# httptest.NewRequest()
+`NewRequest(method, url, body)`merupakan function yang digunakan untuk membuat http.Request<br>
+kita bisa menentukan method, url, body yang akan kita kirim sebagai simulasi unit test <br>
+Selain itu kita juga bisa menambahkan informasi tambahan seperti cookie, header, dan lain-lain
+# httptest.NewRecorder()
+`httptest.NewRecorder()` merupakan function yang digunakan untuk membuat ResponseRecorder<br>
+ResponseRecorder merupakan sebuah struct bantuan untuk merekan HTTP Response dari hasil testing yang kita lakukan <br>
