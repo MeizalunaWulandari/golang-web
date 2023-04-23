@@ -19,3 +19,5 @@ Jika dalam ServeMux kita menambahkan diakhirannya dengan garis artinya semua url
 Namun jika terdapat URL Pattern yang lebih panjang URL tersebut yang akan di prioritaskan
 
 # Request
+Request adalah struct yang merepresesntasikan HTTP Request yang dikirim oleh web browser <br>
+Semua informasi request yang dikirim bisa kita dapatkan di Request, seperti URL, HTTP Method, HTTP Header, HTTP Body, dan lain-lain
