@@ -11,3 +11,11 @@ Handler di golang di representasikan dalam interface, dimana dalam kontraknya te
 ## HandlerFunc
 Salah satu implementasi dari interface Handler adalah HandlerFunc
 Kita bisa menggunakan HandleFunc untuk membuat function HTTP
+
+## ServeMux
+ServeMux adalah implementasi Handler yang bisa mendukung multiple endpoint.
+### URL Pattern
+Jika dalam ServeMux kita menambahkan diakhirannya dengan garis artinya semua url tersebut akan menerima path dengan awalan tersebut<br>
+Namun jika terdapat URL Pattern yang lebih panjang URL tersebut yang akan di prioritaskan
+
+# Request
