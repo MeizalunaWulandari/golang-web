@@ -5,6 +5,7 @@ import (
 	"testing"
 	"net/http"
 	"embed"
+	"io/fs"
 )
 
 func TestFileServer404(t *testing.T){
@@ -47,6 +48,23 @@ var resources embed.FS
 
 func TestFileServerEmbed404(t *testing.T){
 	fileServer := http.FileServer(http.FS(resources))
+
+	mux := http.NewServeMux()
+	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
+
+	server := http.Server{
+		Addr: "localhost:8000",
+		Handler: mux,
+	}
+	err := server.ListenAndServe()
+	if err != nil {
+		panic(err)
+	}
+}
+
+func TestFileServerEmbed(t *testing.T){
+	directory,_ := fs.Sub(resources, "resources")
+	fileServer := http.FileServer(http.FS(directory))
 
 	mux := http.NewServeMux()
 	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
