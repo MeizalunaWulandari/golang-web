@@ -86,3 +86,14 @@ Dan Server secara otomatis akan selalu menerima data cookie yang dibawa oleh cli
 ### Membuat Cookie
 Cookie merupakan data yang dibuat di server dan sengaja agar disimpan di web browser <br>
 Untuk membuat cookie di server, kita bisa menggunakan function `http.SetCookie()`
+
+## File Server 
+Golang memiliki sebuah function yang bernama `FileServer` <br>
+Dengan ini, kita bisa membuat handler di golang web yang digunakan sebagai static file server <br>
+Dengan menggunakan `FileServer` kita tidak perlu manual me-load file lagi <br>
+FileServer adalah Handler, jadi bisa kita tambahkan ke dalam `http.Server` atau `http.ServeMux`
+### 404 Not Found
+Jika coba jalankan `TestGetCookie()`, saat kita membuka misalnya `/static/index.html`, maka akan dapat error `404 Not Found`<br>
+Hal ini dikarenakan FileServer akan membaca url, lalu mencari file berdasarkan urlnya, jadi jika kita membuat `/static/index.html`, maka FileServer akan mencari file `/resources/static/index.html`<br>
+Hal ini menyebabkan 404 not found karena memang filenya tidak ditemukan <br>
+Oleh karena itu, kita menggunakan function `httpStripPrefix()` untuk menghapus prefix url 
