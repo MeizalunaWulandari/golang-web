@@ -73,3 +73,16 @@ Dari response code ini kita bisa melihat apakah sebuah request yang kita kirim i
 Jika kita tidak menyebutkan response code, maka response codenya adalah 200 OK<br>
 Jika kita ingin mengubahnya, kita bisa menggunakan function `ResponseWriter.WriteHeader(int)`<br>
 Semua data status code juga sudah disediakan di golang, jadi kita bisa menggunakan variabel yang sadah di sediakan
+
+## Cookie
+### Stateless
+HTTP merupakan stateless antara client dan server, artinya server tidak menyimpan data apapun dari untuk mengingat setiap request request dari client<br>
+Hal ini bertujuan agar mudah melakukan scalability disisi server<br>
+Namun jika ingin mengingat sebuah data request dari client seperti login bisa dengan memanfaatkan cookie
+### Cookie
+Cookie adalah fitur di HTTP dimana server bisa memberi response cookie (key-value) dan client akan menyimpan cookie tersebut di web browser<br>
+Request selanjutnya, client akan selalu membawa cookie tersebut secara otomatis<br>
+Dan Server secara otomatis akan selalu menerima data cookie yang dibawa oleh client setiap kali client mengirim request
+### Membuat Cookie
+Cookie merupakan data yang dibuat di server dan sengaja agar disimpan di web browser <br>
+Untuk membuat cookie di server, kita bisa menggunakan function `http.SetCookie()`
