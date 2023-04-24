@@ -65,3 +65,11 @@ Jika menggunakan method POST, maka semua data form akan dikirim via body HTTP Re
 ### Request.PostForm
 Semua data yang dikirim dari client, secara otomatis akan disimpan dalam attribute `Request.PostForm`<br>
 Namun sebelum mengambil datanya kita harus melakukan parsing terlebih dahulu dengan function `Request.ParseForm`
+
+## Response Code
+Response Code merupakan representasi dari kode response(200, 404, 302, dll)<br>
+Dari response code ini kita bisa melihat apakah sebuah request yang kita kirim itu sukses diproses oleh server atau gagal<br>
+### Mengubah Response Code
+Jika kita tidak menyebutkan response code, maka response codenya adalah 200 OK<br>
+Jika kita ingin mengubahnya, kita bisa menggunakan function `ResponseWriter.WriteHeader(int)`<br>
+Semua data status code juga sudah disediakan di golang, jadi kita bisa menggunakan variabel yang sadah di sediakan
