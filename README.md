@@ -104,3 +104,11 @@ Golang Embed juga memiliki fitur yang bernama `embed.FS`, fitur ini bisa diinter
 Jika kita coba jalankan, dan coba buka `/static/index.html`, maka kita akan mendapatkan error `404 Not Found` <br>
 Hal ini terjadi karena pada `golang embeed` nama folder ikut menjadi nama resourcenya, misalnya `resources/index.html`, jadi untuk mengaksesnya kita perlu menggunakan URL `/static/resources/index.html`<br>
 Jika kita ingin langsung mengakses file `index.html` tanpa menggunakan `resources`, kita bisa mengunakan function `fs.Sub()` untuk mendapatkan sub directory
+
+## ServeFile
+Kadang ada kasus misalnya kita hanya ingin menggunakan static file sesuai dengan yang kita inginkan<br>
+Hal bisa dilakukan menggunakan function `http.ServeFile()`
+Dengan menggunakan function ini, kita bisa menemukan file mana yang ingin kita tulis ke http response
+### Golang Embed
+Parameter function `http.ServeFile` hanya berisi string file name, sehingga tidak bisa menggunakan golang embed<br>
+Namun bukan berarti kita tidak bisa menggunakan golang embed, karena jika untuk melakukan load file, kita hanya butuh menggunakan package `fmt` dan `ResponseWriter` saja
