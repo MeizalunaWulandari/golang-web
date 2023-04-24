@@ -59,3 +59,9 @@ Header berisi `map[string][]string`<br>
 Berbeda dengan Query Parameter yang case sensitif, header key tidaklah case sensitif
 ### Response Header
 Jika ingin menambahkan header pada response, kita bisa menggunakan `ResponseWriter.Header()`
+
+## Form Post
+Jika menggunakan method POST, maka semua data form akan dikirim via body HTTP Request <br>
+### Request.PostForm
+Semua data yang dikirim dari client, secara otomatis akan disimpan dalam attribute `Request.PostForm`<br>
+Namun sebelum mengambil datanya kita harus melakukan parsing terlebih dahulu dengan function `Request.ParseForm`
