@@ -92,8 +92,15 @@ Golang memiliki sebuah function yang bernama `FileServer` <br>
 Dengan ini, kita bisa membuat handler di golang web yang digunakan sebagai static file server <br>
 Dengan menggunakan `FileServer` kita tidak perlu manual me-load file lagi <br>
 FileServer adalah Handler, jadi bisa kita tambahkan ke dalam `http.Server` atau `http.ServeMux`
-### 404 Not Found
+### 404 Not Found (FileServer)
 Jika coba jalankan `TestGetCookie()`, saat kita membuka misalnya `/static/index.html`, maka akan dapat error `404 Not Found`<br>
 Hal ini dikarenakan FileServer akan membaca url, lalu mencari file berdasarkan urlnya, jadi jika kita membuat `/static/index.html`, maka FileServer akan mencari file `/resources/static/index.html`<br>
 Hal ini menyebabkan 404 not found karena memang filenya tidak ditemukan <br>
 Oleh karena itu, kita menggunakan function `httpStripPrefix()` untuk menghapus prefix url 
+### Golang Embed
+Dalam golang embed kita bisa embed file ke dalam binary distribution file, hal ini mempermudah sehingga kita tidak perlu meng-copy static file lagi<br>
+Golang Embed juga memiliki fitur yang bernama `embed.FS`, fitur ini bisa diintergrasikan dengan `FileServer`
+### 404 Not Found (Embed)
+Jika kita coba jalankan, dan coba buka `/static/index.html`, maka kita akan mendapatkan error `404 Not Found` <br>
+Hal ini terjadi karena pada `golang embeed` nama folder ikut menjadi nama resourcenya, misalnya `resources/index.html`, jadi untuk mengaksesnya kita perlu menggunakan URL `/static/resources/index.html`<br>
+Jika kita ingin langsung mengakses file `index.html` tanpa menggunakan `resources`, kita bisa mengunakan function `fs.Sub()` untuk mendapatkan sub directory
