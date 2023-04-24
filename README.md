@@ -36,15 +36,26 @@ ResponseRecorder merupakan sebuah struct bantuan untuk merekan HTTP Response dar
 
 ## Query Parameter
 Untuk membuat query paramter kita bisa menggunakan `?name=value`pada URL-nya
-## url.URL
+### url.URL
 Dalam parameter Request, terdapat atribut URL yang berisi data url.URL<br>
 Kita bisa mengambil data query parameter yang dikirim dari client dengan menggunakan method `Query()` yang akan mengembalikan map
-## Multiple Query Parameter
+### Multiple Query Parameter
 Dalam spesifikasi URL, Kita bisa menambahkan lebih dari satu query parameter<br>
 Ini cocok sekali jika kita memang ingin mengirim banyak parameter data ke server, kita cukup menambahkan query parameter lainnya <br>
 Untuk menambahkan query parameter kita bisa menggunakan tanda `&` lalu diikuti dengan query paramter berikutnya
-## Multiple Value Query Parameter
+### Multiple Value Query Parameter
 Sebenarnya URL melakukan parsing query parameter dengan menyimpannya dalam `map[string][]string`<br>
 Artinya dalam satu query parameter kita bisa memasukkan beberapa value <br>
 Caranya dengan menambahkan query parameter dengan nama yang sama, namun berbeda value, misalnya: 
 `name=Meizaluna&name=Wulandari`
+
+## Header
+Header adalah informasi tambahan yang biasa dikirim dari client ke server ataupun sebaliknya<br>
+Jadi header tidak hanya ada pada HTTP Request tetapi juga ada pada HTTP Response <br>
+Saat menggunakan browser, biasanya seacara otomatis header akan ditambahkan oleh browser, seperti informasi browser, jenis tipe konten yang diterima atau  dikirim oleh browser, dan lain-lain
+### Request Header 
+Untuk mengambil request header kita bisa menggunakan `Request.Header`<br>
+Header berisi `map[string][]string`<br>
+Berbeda dengan Query Parameter yang case sensitif, header key tidaklah case sensitif
+### Response Header
+Jika ingin menambahkan header pada response, kita bisa menggunakan `ResponseWriter.Header()`
