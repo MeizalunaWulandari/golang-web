@@ -142,3 +142,10 @@ Saat kita membuat template, kadang kita ingin menambahkan banyak data dinamis <b
 Hal ini bisa kita lakukan dengan cara menggunakan `struct` atau `map`<br>
 Namun perlu dilakukan perubahan didalam text templatenya, kita  perlu memberi tahu Field atau key mana yang akan digunakan untuk mengisi data data dinamis di template tersebut<br>
 Kita bisa menyebukan dengan cara seperti ini `{{.NamaField}}`
+
+## Template Action
+Golang template mendukung perintah action, seperti percabangan, perulangan dan lain-lain
+### if else
+`{{if.Value}}T1{{end}}`, jika `Value` tidak kosong maka `T1` akan dieksekusi, jika kosong, tidak ada yang dieksekusi<br>
+`{{if.Value}}T1{{else}}T2{{end}}`,  jika `Value` tidak kosong, maka `T1` akan dieksekusi, Jika kosong maka `T2` yang akan dieksekusi<br>
+`{{if.Value1}}T1{{else if.Value2}}T2{{else}}T3{{end}}` jika `Value` tidak kosong maka `T1` akan dieksekusi, Jika `Value2` tidak kosong, maka `T2` akan dieksekusi, jika semuanya kosong maka `T3` akan dieksekusi
