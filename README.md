@@ -182,3 +182,7 @@ Golang template mendukung import dari template lain
 Untuk melakukan Import, kita bisa menggunakan perintah berikut:
 `{{template "nama"}}` artinya kita akan mengimport template "nama" tanpa memberi data apapun<br>
 `{{template "nama".Value}}` artinya kita akan mengimport template "nama" dengan memberikan data `Value`
+### Template Name
+Saat membuat template dari file, secara otomatis nama filenya akan menjadi nama template<br>
+Namun jika ingin mengubah nama templatenya bisa menggunakan perintah <br>
+`{{define "nama"}}TEMPLATE{{end}}` artinya kita membuat template dengan nama "nama"
