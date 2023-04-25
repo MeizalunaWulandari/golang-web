@@ -124,3 +124,7 @@ Bagian dinamis pada HTML Template, adalah bagian yang menggunakan tanda `{{ }}`
 Pada saat membuat template dengan string, kita bisa perlu memberi nama template nya<br>
 Dan saat membuat text template, cukup buat text html, dan untuk konten yang dinamis kita bisa menggunakan `{{.}}` contonya : <br>
 `<html><body>{{.}}</body></html>`
+### Template Dari File
+Selain membuat template dari string, kita juga bisa membuat template langsung dari file<br>
+Hal ini mempermudah kita, karena bisa langsung membuat file HTML<br>
+Saat membuat template menggunakan file, secara otomatis nama file akan menjadi nama templaten, misalnya jika kita punya file `simple.html`, maka nama templatenya adalah `simple.html`
