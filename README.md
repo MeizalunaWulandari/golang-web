@@ -196,3 +196,6 @@ Cara mengakses function sama seperti mengakses field, namun jika function terseb
 Golang Template memiliki beberapa global function<br>
 Global function adalah function yang bisa digunakan secara langsung tanpa menggunakan template data<br>
 Untuk memanggil global function tidak perlu `.` seperti memanggil function sebelumnya, melainkan langsung memanggil nama function tersebut.
+### Menambahkan function Global
+Untuk menambahkan global function kita bisa menggunakan method `Funcs` pada `template`<br>
+Perlu diingat, bahwa menambahkan global function harus dilakukan sebelum melakukan parsing template
