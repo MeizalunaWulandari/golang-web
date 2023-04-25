@@ -169,3 +169,7 @@ Jika menggunakan template, kita bisa mengaksesnya menggunakan `.Value.NestedValu
 Di template terdapat action `With` yang bisa digunakan untuk mengubah scope dot menjadi object yang kita mau<br>
 `{{with.Value}}T1{{end}}` jika value tidak kosong, T1 semua dot akan merefer ke value<br>
 `{{with.Value}}T1{{else}}T2{{end}}` sama seperti sebelumjya, namun jika value kosong maka `T2` akan dieksekusi
+### Komentar
+Template juga mendukung komentar<br>
+Komentar secara otomatis akan hilang ketika template text di parsing (tidak akan menjadi komentar HTML )<br>
+Untuk membuat komentar sangat sederhana, kita bisa gunakan `{{/*Contoh Komentar*/}}`
