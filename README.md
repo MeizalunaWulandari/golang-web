@@ -149,3 +149,11 @@ Golang template mendukung perintah action, seperti percabangan, perulangan dan l
 `{{if.Value}}T1{{end}}`, jika `Value` tidak kosong maka `T1` akan dieksekusi, jika kosong, tidak ada yang dieksekusi<br>
 `{{if.Value}}T1{{else}}T2{{end}}`,  jika `Value` tidak kosong, maka `T1` akan dieksekusi, Jika kosong maka `T2` yang akan dieksekusi<br>
 `{{if.Value1}}T1{{else if.Value2}}T2{{else}}T3{{end}}` jika `Value` tidak kosong maka `T1` akan dieksekusi, Jika `Value2` tidak kosong, maka `T2` akan dieksekusi, jika semuanya kosong maka `T3` akan dieksekusi
+### Operator Perbandingan 
+Golang template juga mendukung operator perbandingan, ini cocok ketika kita butuh melakukan perbandingan number di if statement Operator Perbandingan di golang sedikit berbeda<br>
+`eq` => `==`
+`ne` => `!=`
+`lt` => `<`
+`le` => `<=`
+`gt` => `>`
+`ge` => `>=`
