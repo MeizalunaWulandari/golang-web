@@ -173,3 +173,12 @@ Di template terdapat action `With` yang bisa digunakan untuk mengubah scope dot 
 Template juga mendukung komentar<br>
 Komentar secara otomatis akan hilang ketika template text di parsing (tidak akan menjadi komentar HTML )<br>
 Untuk membuat komentar sangat sederhana, kita bisa gunakan `{{/*Contoh Komentar*/}}`
+
+## Template Layout
+Saat kita membuat halaman website, kadang ada beberapa bagian yang selalu sama, misalnya header dan footer<br>
+Best Practicenya jika terdapat bagian yang selalu sama, disarankan untuk disimpan pada template yang terpisah, agar bisa digunakan ditemplate lain<br>
+Golang template mendukung import dari template lain
+### Import Template
+Untuk melakukan Import, kita bisa menggunakan perintah berikut:
+`{{template "nama"}}` artinya kita akan mengimport template "nama" tanpa memberi data apapun<br>
+`{{template "nama".Value}}` artinya kita akan mengimport template "nama" dengan memberikan data `Value`
