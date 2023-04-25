@@ -204,3 +204,10 @@ Golang template mendukung function pipelines, artinya hasil dari function bisa d
 Untuk menggunakan function pipelines, kita bisa menggunakan tanda `|`, misalnya:<br>
 {{sayHello .Name|upper}}, artinya akan memanggil global function `sayHello(Name)` hasil dari `sayHello(name)` akan dikirim ke function `upper(hasil)`
 Kita bisa menambahkan function pipelines lebih dari satu
+
+## Template Caching
+Kode-kode sebelumnya yang sudah dipraktekkan sebenarnya tidak efisien<br>
+Hal ini dikarenakan, setiap handler dipanggil, kita selalu melakukan parsing ulang templatenya<br>
+Idealnya template hanya melakukan parsing satu kali diawal ketika aplikasi berjalan<br>
+Selanjutnya data template akan di caching (Disimpan di Memori(RAM)), sehingga tidak perlu melakukan parsing lagi<br>
+Hal ini membuat web kita semakin cepat
