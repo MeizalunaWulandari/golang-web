@@ -128,3 +128,8 @@ Dan saat membuat text template, cukup buat text html, dan untuk konten yang dina
 Selain membuat template dari string, kita juga bisa membuat template langsung dari file<br>
 Hal ini mempermudah kita, karena bisa langsung membuat file HTML<br>
 Saat membuat template menggunakan file, secara otomatis nama file akan menjadi nama templaten, misalnya jika kita punya file `simple.html`, maka nama templatenya adalah `simple.html`
+### Template Directory
+Jarang sekali kita menyebutkan file template satu persatu<br>
+Alangkah baiknya  untuk template kita simpan disatu directory <br>
+Golang Template mendukung proses load template dari directory<br>
+Hal ini memudahkan kita, sehingga tidak perlu menyebutkan nama filenya satu persatu
