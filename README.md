@@ -192,3 +192,7 @@ Selain mengakses Field, dalam template function juga bisa diakses<br>
 Cara mengakses function sama seperti mengakses field, namun jika function tersebut memiliki parameter, kita bisa menggunakan tambahan parameter ketika memanggil function di templatenya<br>
 `{{.FunctionName}}` memanggil field `FunctionName ` atau function `FunctionName()`<br>
 `{{.FunctionName "Meizaluna", "Wulandari"}}` memanggil function `FunctionName("Meizaluna", "Wulandari")`
+### Global Function
+Golang Template memiliki beberapa global function<br>
+Global function adalah function yang bisa digunakan secara langsung tanpa menggunakan template data<br>
+Untuk memanggil global function tidak perlu `.` seperti memanggil function sebelumnya, melainkan langsung memanggil nama function tersebut.

@@ -33,3 +33,20 @@ func TestTemplateFunction(t *testing.T) {
 	body, _ := io.ReadAll(recorder.Result().Body)
 	fmt.Println(string(body))
 }
+
+func TemplateFunctionGlobal(writer http.ResponseWriter, request *http.Request) {
+	t := template.Must(template.New("FUNCTION").Parse(` {{len .Name}} `))
+	t.ExecuteTemplate(writer, "FUNCTION", MyPage{
+		Name: "Andini",
+	})
+}
+
+func TestTemplateFunctionGlobal(t *testing.T) {
+	request := httptest.NewRequest(http.MethodGet, "http://localhost:8000", nil)
+	recorder := httptest.NewRecorder()
+
+	TemplateFunctionGlobal(recorder, request)
+
+	body, _ := io.ReadAll(recorder.Result().Body)
+	fmt.Println(string(body))
+}
