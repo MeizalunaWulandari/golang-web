@@ -157,3 +157,9 @@ Golang template juga mendukung operator perbandingan, ini cocok ketika kita butu
 `le` => `<=`
 `gt` => `>`
 `ge` => `>=`
+### Range
+`Range` Digunakan untuk melakukan iterasi data template<br>
+Tidak ada perulangan seperti biasa menggunakan for di golang template<br>
+Yang bisa kita lakukan adalah menggunakan range untuk mengiterasi data tiap data array, slice, map atau channel<br>
+`{{range $index, $element := .Value}} T1 {{end}}`, jika value memiliki data, maka T1 akan dieksekusi sebanyak element value, dan kita bisa menggunakan `$index` untuk mengakses `index` dan `$element` untuk mengakses `element`<br>
+`{{range $index, $element := Value}}T1{{else}}T2{{end}}`, Sama seperti sebelumnya, namun jika `Value` tidak memiliki element apapun, maka `T2` yang akan dieksekusi
