@@ -112,3 +112,15 @@ Dengan menggunakan function ini, kita bisa menemukan file mana yang ingin kita t
 ### Golang Embed
 Parameter function `http.ServeFile` hanya berisi string file name, sehingga tidak bisa menggunakan golang embed<br>
 Namun bukan berarti kita tidak bisa menggunakan golang embed, karena jika untuk melakukan load file, kita hanya butuh menggunakan package `fmt` dan `ResponseWriter` saja
+
+## Templates
+Di golang terdapat fitur HTML Template, yaitu fitur yang bisa kita gunakan untuk membuat HTML yang dinamis<br>
+### HTML Template
+Fitur HTML Template terdapat pada package `html/template`<br>
+Sebelum menggunakan HTML Template, kita perlu membuat templatenya dulu<br>
+Template bisa berupa string atau file<br>
+Bagian dinamis pada HTML Template, adalah bagian yang menggunakan tanda `{{ }}`
+### Membuat Template
+Pada saat membuat template dengan string, kita bisa perlu memberi nama template nya<br>
+Dan saat membuat text template, cukup buat text html, dan untuk konten yang dinamis kita bisa menggunakan `{{.}}` contonya : <br>
+`<html><body>{{.}}</body></html>`
