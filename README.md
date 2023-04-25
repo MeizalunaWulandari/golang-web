@@ -199,3 +199,8 @@ Untuk memanggil global function tidak perlu `.` seperti memanggil function sebel
 ### Menambahkan function Global
 Untuk menambahkan global function kita bisa menggunakan method `Funcs` pada `template`<br>
 Perlu diingat, bahwa menambahkan global function harus dilakukan sebelum melakukan parsing template
+### Function Pipelines
+Golang template mendukung function pipelines, artinya hasil dari function bisa dikirim ke function berikutnya<br>
+Untuk menggunakan function pipelines, kita bisa menggunakan tanda `|`, misalnya:<br>
+{{sayHello .Name|upper}}, artinya akan memanggil global function `sayHello(Name)` hasil dari `sayHello(name)` akan dikirim ke function `upper(hasil)`
+Kita bisa menambahkan function pipelines lebih dari satu
