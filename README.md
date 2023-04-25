@@ -186,3 +186,9 @@ Untuk melakukan Import, kita bisa menggunakan perintah berikut:
 Saat membuat template dari file, secara otomatis nama filenya akan menjadi nama template<br>
 Namun jika ingin mengubah nama templatenya bisa menggunakan perintah <br>
 `{{define "nama"}}TEMPLATE{{end}}` artinya kita membuat template dengan nama "nama"
+
+## Template Function
+Selain mengakses Field, dalam template function juga bisa diakses<br>
+Cara mengakses function sama seperti mengakses field, namun jika function tersebut memiliki parameter, kita bisa menggunakan tambahan parameter ketika memanggil function di templatenya<br>
+`{{.FunctionName}}` memanggil field `FunctionName ` atau function `FunctionName()`<br>
+`{{.FunctionName "Meizaluna", "Wulandari"}}` memanggil function `FunctionName("Meizaluna", "Wulandari")`
