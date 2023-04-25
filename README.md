@@ -163,3 +163,9 @@ Tidak ada perulangan seperti biasa menggunakan for di golang template<br>
 Yang bisa kita lakukan adalah menggunakan range untuk mengiterasi data tiap data array, slice, map atau channel<br>
 `{{range $index, $element := .Value}} T1 {{end}}`, jika value memiliki data, maka T1 akan dieksekusi sebanyak element value, dan kita bisa menggunakan `$index` untuk mengakses `index` dan `$element` untuk mengakses `element`<br>
 `{{range $index, $element := Value}}T1{{else}}T2{{end}}`, Sama seperti sebelumnya, namun jika `Value` tidak memiliki element apapun, maka `T2` yang akan dieksekusi
+### With
+Kadang kita sering membuat nested struct <br>
+Jika menggunakan template, kita bisa mengaksesnya menggunakan `.Value.NestedValue`<br>
+Di template terdapat action `With` yang bisa digunakan untuk mengubah scope dot menjadi object yang kita mau<br>
+`{{with.Value}}T1{{end}}` jika value tidak kosong, T1 semua dot akan merefer ke value<br>
+`{{with.Value}}T1{{else}}T2{{end}}` sama seperti sebelumjya, namun jika value kosong maka `T2` akan dieksekusi
