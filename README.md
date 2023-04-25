@@ -133,3 +133,6 @@ Jarang sekali kita menyebutkan file template satu persatu<br>
 Alangkah baiknya  untuk template kita simpan disatu directory <br>
 Golang Template mendukung proses load template dari directory<br>
 Hal ini memudahkan kita, sehingga tidak perlu menyebutkan nama filenya satu persatu
+### Template Dari Golang Embed
+Karena sudah ada golang embed, jadi direkomendasikan menggunakan golang embed untuk menyimpan data file template<br>
+Menggunakan golang embed menjadikan kita tidak perlu ikut mengcopy file template lagi, karena sudah otomatis di embed dalam distribution file golang.
