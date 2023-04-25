@@ -136,3 +136,9 @@ Hal ini memudahkan kita, sehingga tidak perlu menyebutkan nama filenya satu pers
 ### Template Dari Golang Embed
 Karena sudah ada golang embed, jadi direkomendasikan menggunakan golang embed untuk menyimpan data file template<br>
 Menggunakan golang embed menjadikan kita tidak perlu ikut mengcopy file template lagi, karena sudah otomatis di embed dalam distribution file golang.
+
+## Template Data
+Saat kita membuat template, kadang kita ingin menambahkan banyak data dinamis <br>
+Hal ini bisa kita lakukan dengan cara menggunakan `struct` atau `map`<br>
+Namun perlu dilakukan perubahan didalam text templatenya, kita  perlu memberi tahu Field atau key mana yang akan digunakan untuk mengisi data data dinamis di template tersebut<br>
+Kita bisa menyebukan dengan cara seperti ini `{{.NamaField}}`
