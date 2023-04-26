@@ -211,3 +211,9 @@ Hal ini dikarenakan, setiap handler dipanggil, kita selalu melakukan parsing ula
 Idealnya template hanya melakukan parsing satu kali diawal ketika aplikasi berjalan<br>
 Selanjutnya data template akan di caching (Disimpan di Memori(RAM)), sehingga tidak perlu melakukan parsing lagi<br>
 Hal ini membuat web kita semakin cepat
+
+## XSS (Cross Site Scripting)
+XSS adalah salah satu issue security yang biasa terjadi ketika membuat web<br>
+XSS adalah celah keamanan dimana orang secara sengaja memasukkan parameter yang mengandung javascript agar dirender oleh halaman website kita<br>
+Biasanya tujuan dari XSS adalah mencuri cookie browser pengguna yang sedang mengakses website kita<br>
+XSS bisa menyebabkan akun pengguna kita diambil alih jika tidak ditangani dengan baik
