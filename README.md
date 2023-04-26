@@ -244,3 +244,8 @@ Hal ini memudahkan kita ketika membuat web yang menerima file upload
 ### Multipart
 Saat ingin menerima upload file, kita perlu melakukan parsing terlebih dahulu menggunakan `Request.ParseMultiPartForm(size)`, atau kita bisa lansung ambil ambil data filenya menggunakan `Request.FormFile(name)`, didalamnya secara otomatis melakukan parsing terlebih dahulu<br>
 Hasilnya merupakan data-data yangterdapat pada package multipart, seperti `multipart.File` sebagai representasi filenya dan `multipart.FileHeader` sebagai informasi filenya
+
+## Download File
+Selain Upload file, kadang kita juga ingin membuat halaman website yang digunakan untuk mendownload sesuatu<br>
+Sebenarnya di golang sudah disediakan menggunakan `FileServer` dan `ServeFile`<br>
+Dan jika ingin memaksa file di download (tanpa di render oleh browser, kita bisa menggunakan header `Content-Disposition`)
