@@ -1,8 +1,13 @@
 package golang_web
 
 import (
+	"bytes"
+	_ "embed"
+	"fmt"
 	"io"
+	"mime/multipart"
 	"net/http"
+	"net/http/httptest"
 	"os"
 	"testing"
 )
@@ -48,4 +53,26 @@ func TestUploadForm(t *testing.T) {
 	if err != nil {
 		panic(err)
 	}
+}
+
+//go:embed resources/05.png
+var uploadFileTest []byte
+
+func TestUploadFile(t *testing.T) {
+	body := new(bytes.Buffer)
+
+	writer := multipart.NewWriter(body)
+	writer.WriteField("name", "Meizaluna Wulandari")
+	file, _ := writer.CreateFormFile("file", "CONTOHUPLOAD.png")
+	file.Write(uploadFileTest)
+	writer.Close()
+
+	request := httptest.NewRequest(http.MethodPost, "http://localhost:8000/upload", body)
+	request.Header.Set("Content-Type", writer.FormDataContentType())
+	recorder := httptest.NewRecorder()
+
+	Upload(recorder, request)
+
+	bodyResponse, _ := io.ReadAll(recorder.Result().Body)
+	fmt.Println(string(bodyResponse))
 }
