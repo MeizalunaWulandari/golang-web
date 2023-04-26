@@ -253,3 +253,5 @@ Dan jika ingin memaksa file di download (tanpa di render oleh browser, kita bisa
 ## Middleware
 Dalam pembuatan web, ada konsep yang bernama `middleware` atau `filter` atau `interceptor`<br>
 `Middleware` adalah sebuah fitur dimana kita bisa menambahkan kode sebelum dan sesudah sebuah `handler` dieksekusi
+### Middleware Di Golang Web
+Sayangnya, di golang web tidak ada middleware, Namn karena struktur `handler` yang baik menggunakan  `interface`, kita bisa membuar `middleware` sendiri menggunakan handler
