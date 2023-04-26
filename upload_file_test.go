@@ -27,8 +27,9 @@ func Upload(writer http.ResponseWriter, request *http.Request) {
 	}
 	name := request.PostFormValue("name")
 	myTemplates.ExecuteTemplate(writer, "upload.success.gohtml", map[string]interface{}{
-		"Name": name,
-		"File": "/static/" + fileHeader.Filename,
+		"Title": "File Upload Multipart",
+		"Name":  name,
+		"File":  "/static/" + fileHeader.Filename,
 	})
 }
 
