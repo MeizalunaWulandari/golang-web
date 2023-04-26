@@ -241,3 +241,6 @@ Namun, untung di Golang ada function yang bisa kita gunakan untuk mempermudah in
 Saat membuat web, selain menerima input data berupa form dan query parameter, kadang kita juga butuh menerima input data berupa file dari client<br>
 Golang web sudah memiliki fitur untuk management upload file<br>
 Hal ini memudahkan kita ketika membuat web yang menerima file upload
+### Multipart
+Saat ingin menerima upload file, kita perlu melakukan parsing terlebih dahulu menggunakan `Request.ParseMultiPartForm(size)`, atau kita bisa lansung ambil ambil data filenya menggunakan `Request.FormFile(name)`, didalamnya secara otomatis melakukan parsing terlebih dahulu<br>
+Hasilnya merupakan data-data yangterdapat pada package multipart, seperti `multipart.File` sebagai representasi filenya dan `multipart.FileHeader` sebagai informasi filenya
