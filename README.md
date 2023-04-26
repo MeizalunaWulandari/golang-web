@@ -229,3 +229,10 @@ kita bisa menggunakan data: <br>
 ### Masalah XSS (Cross Site Scripting)
 Saat mematikan fitur auto escape, bisa dipastikan masalah `XSS` akan mengintai kita <br>
 Jadi pastikan kita benar-benar percaya terhadap sumber data yang kita matikan auto escapenya.
+
+## Redirect
+Saat membuat website, kadang kita butuh melakukan redirect <br>
+Misalnya setelah login, kita lakukan redirect ke halaman dasboard<br>
+Redirect sendiri sebenarnya sudah standar di HTTP<br>
+Kita hanya perlu membuat `response code` `3xx` dan menambahkan header Location<br>
+Namun, untung di Golang ada function yang bisa kita gunakan untuk mempermudah ini
