@@ -217,3 +217,6 @@ XSS adalah salah satu issue security yang biasa terjadi ketika membuat web<br>
 XSS adalah celah keamanan dimana orang secara sengaja memasukkan parameter yang mengandung javascript agar dirender oleh halaman website kita<br>
 Biasanya tujuan dari XSS adalah mencuri cookie browser pengguna yang sedang mengakses website kita<br>
 XSS bisa menyebabkan akun pengguna kita diambil alih jika tidak ditangani dengan baik
+### Auto Escape
+Di golang Template, masalah XSS sudah diatasi secara otomatis<br>
+Golang template memiliki fitur Auto Escape, dimana dia bisa mendeteksi data yang perlu ditampilkan di template,jika mengandung tag-tag HTML atau script, secara otomatis akan di escape
