@@ -260,3 +260,10 @@ Kadang `middleware` juga bisa digunakan untuk melakukan `error handler`<br>
 Hal ini sehingga jika terjadi panic di Hadler, kita bisa melakukakan `recover` di `middleware`, dan mengubah `panic` tersebut menjadi `error response`
 
 ## Routing Library
+Walaupun golang sudah menyediakan `ServeMux` sebagai handler yang bisa menghandle beberapa endpoint atau istilahnya adalah routing<br>
+Tapi kebanyakkan programmer golang biasanya akan menggunakan library untuk melakukan routing<br>
+Hal ini karena `ServeMux` tidak memiliki advanced fitur seperti `path variable`, `auto banding parameter dan middlewarware` <br>
+### Contoh Routing Library
+https://github.com/julienschmidt/httprouter<br>
+https://github.com/gorilla/mux<br>
+dan masih banyak lagi
