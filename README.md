@@ -226,3 +226,6 @@ kita bisa menggunakan data: <br>
 `template.HTML` jika ini adalah data `HTML`
 `template.CSS` jika ini adalah data `CSS`
 `template.JS` jika ini adalah data `JavaScript`
+### Masalah XSS (Cross Site Scripting)
+Saat mematikan fitur auto escape, bisa dipastikan masalah `XSS` akan mengintai kita <br>
+Jadi pastikan kita benar-benar percaya terhadap sumber data yang kita matikan auto escapenya.
