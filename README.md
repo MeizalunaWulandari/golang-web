@@ -258,3 +258,5 @@ Sayangnya, di golang web tidak ada middleware, Namn karena struktur `handler` ya
 ### Error Handler
 Kadang `middleware` juga bisa digunakan untuk melakukan `error handler`<br>
 Hal ini sehingga jika terjadi panic di Hadler, kita bisa melakukakan `recover` di `middleware`, dan mengubah `panic` tersebut menjadi `error response`
+
+## Routing Library
