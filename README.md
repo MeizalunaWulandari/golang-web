@@ -236,3 +236,8 @@ Misalnya setelah login, kita lakukan redirect ke halaman dasboard<br>
 Redirect sendiri sebenarnya sudah standar di HTTP<br>
 Kita hanya perlu membuat `response code` `3xx` dan menambahkan header Location<br>
 Namun, untung di Golang ada function yang bisa kita gunakan untuk mempermudah ini
+
+## Upload File
+Saat membuat web, selain menerima input data berupa form dan query parameter, kadang kita juga butuh menerima input data berupa file dari client<br>
+Golang web sudah memiliki fitur untuk management upload file<br>
+Hal ini memudahkan kita ketika membuat web yang menerima file upload
