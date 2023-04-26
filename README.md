@@ -249,3 +249,7 @@ Hasilnya merupakan data-data yangterdapat pada package multipart, seperti `multi
 Selain Upload file, kadang kita juga ingin membuat halaman website yang digunakan untuk mendownload sesuatu<br>
 Sebenarnya di golang sudah disediakan menggunakan `FileServer` dan `ServeFile`<br>
 Dan jika ingin memaksa file di download (tanpa di render oleh browser, kita bisa menggunakan header `Content-Disposition`)
+
+## Middleware
+Dalam pembuatan web, ada konsep yang bernama `middleware` atau `filter` atau `interceptor`<br>
+`Middleware` adalah sebuah fitur dimana kita bisa menambahkan kode sebelum dan sesudah sebuah `handler` dieksekusi
