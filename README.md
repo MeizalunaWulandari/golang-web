@@ -213,10 +213,16 @@ Selanjutnya data template akan di caching (Disimpan di Memori(RAM)), sehingga ti
 Hal ini membuat web kita semakin cepat
 
 ## XSS (Cross Site Scripting)
-XSS adalah salah satu issue security yang biasa terjadi ketika membuat web<br>
-XSS adalah celah keamanan dimana orang secara sengaja memasukkan parameter yang mengandung javascript agar dirender oleh halaman website kita<br>
-Biasanya tujuan dari XSS adalah mencuri cookie browser pengguna yang sedang mengakses website kita<br>
-XSS bisa menyebabkan akun pengguna kita diambil alih jika tidak ditangani dengan baik
+`XSS` adalah salah satu issue security yang biasa terjadi ketika membuat web<br>
+`XSS` adalah celah keamanan dimana orang secara sengaja memasukkan parameter yang mengandung javascript agar dirender oleh halaman website kita<br>
+Biasanya tujuan dari `XSS` adalah mencuri cookie browser pengguna yang sedang mengakses website kita<br>
+`XSS` bisa menyebabkan akun pengguna kita diambil alih jika tidak ditangani dengan baik
 ### Auto Escape
-Di golang Template, masalah XSS sudah diatasi secara otomatis<br>
+Di golang Template, masalah `XSS` sudah diatasi secara otomatis<br>
 Golang template memiliki fitur Auto Escape, dimana dia bisa mendeteksi data yang perlu ditampilkan di template,jika mengandung tag-tag HTML atau script, secara otomatis akan di escape
+### Mematikan Auto Escape
+Auto Escape juga bisa dimatikian, namun kita perlu memberi tahu secara eksplisit ketika menambahkan template data<br>
+kita bisa menggunakan data: <br>
+`template.HTML` jika ini adalah data `HTML`
+`template.CSS` jika ini adalah data `CSS`
+`template.JS` jika ini adalah data `JavaScript`
