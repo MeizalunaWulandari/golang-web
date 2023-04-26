@@ -255,3 +255,6 @@ Dalam pembuatan web, ada konsep yang bernama `middleware` atau `filter` atau `in
 `Middleware` adalah sebuah fitur dimana kita bisa menambahkan kode sebelum dan sesudah sebuah `handler` dieksekusi
 ### Middleware Di Golang Web
 Sayangnya, di golang web tidak ada middleware, Namn karena struktur `handler` yang baik menggunakan  `interface`, kita bisa membuar `middleware` sendiri menggunakan handler
+### Error Handler
+Kadang `middleware` juga bisa digunakan untuk melakukan `error handler`<br>
+Hal ini sehingga jika terjadi panic di Hadler, kita bisa melakukakan `recover` di `middleware`, dan mengubah `panic` tersebut menjadi `error response`
